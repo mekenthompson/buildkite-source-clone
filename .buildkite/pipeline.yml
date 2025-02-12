@@ -11,7 +11,7 @@ steps:
   - label: "Push packages to Buildkite registry"
     plugins:
       - publish-to-packages#v2.2.0:
-          artifacts: "tgz-packages/**/*"
+          artifacts: "tgz-packages/**"
           registry: "packages-sandbox/is-that-you-nan"
 
   - label: "Run tests"
