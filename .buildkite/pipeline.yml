@@ -1,6 +1,6 @@
 steps:
   - label: "Pull upstream packages"
-    command:
+    commands:
       - "chmod +x pack-all-installed.sh"
       - "npm install lodash --loglevel verbose"
       - "./pack-all-installed.sh"
@@ -16,6 +16,6 @@ steps:
           registry: "packages-sandbox/is-that-you-nan"
   - wait: ~
   - label: "Run tests"
-    command: 
+    commands: 
       - "npm install lodash --registry https://packages.buildkite.com/packages-sandbox/is-that-you-nan/npm/ --loglevel verbose"
       - "npm list lodash --depth=0"
