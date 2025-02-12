@@ -1,2 +1,2 @@
 #!/bin/bash
-npm install express async lodash --loglevel verbose
+npm install express --loglevel verbose
