@@ -1,6 +1,6 @@
 steps:
   - label: "Pull upstream packages"
-    command: "npm install express async lodash --loglevel verbose"
+    command: "npm pack express async lodash --loglevel verbose"
     artifact_paths:
       - "node_modules/**/*"
   - wait: ~
