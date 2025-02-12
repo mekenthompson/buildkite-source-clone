@@ -1,9 +1,8 @@
 steps:
   - label: "Pull upstream packages"
     command:
-      - "chmod +x download-packages.sh"
       - "chmod +x pack-all-installed.sh"
-      - "./download-packages.sh"
+      - "npm install express --loglevel verbose"
       - "./pack-all-installed.sh"
     artifact_paths:
       - "tgz-packages/**/*"
@@ -18,5 +17,5 @@ steps:
 
   - label: "Run tests"
     command: 
-      - "npm install express async lodash --registry https://packages.buildkite.com/packages-sandbox/is-that-you-nan/npm/ --loglevel verbose"
+      - "npm install express --registry https://packages.buildkite.com/packages-sandbox/is-that-you-nan/npm/ --loglevel verbose"
       - "npm test"
