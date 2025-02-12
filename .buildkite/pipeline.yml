@@ -9,6 +9,8 @@ steps:
       - "tgz-packages/**/*"
   - wait: ~
   - label: "Push packages to Buildkite registry"
+    soft_fail:
+    - exit_status: 1
     plugins:
       - publish-to-packages#v2.2.0:
           artifacts: "tgz-packages/**"
