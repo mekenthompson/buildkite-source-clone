@@ -2,7 +2,7 @@ steps:
   - label: "Pull upstream packages"
     command:
       - "chmod +x pack-all-installed.sh"
-      - "npm install express array-flatten@1.1.1 --loglevel verbose"
+      - "npm install lodash --loglevel verbose"
       - "./pack-all-installed.sh"
     artifact_paths:
       - "tgz-packages/**/*"
@@ -17,5 +17,5 @@ steps:
 
   - label: "Run tests"
     command: 
-      - "npm install express --registry https://packages.buildkite.com/packages-sandbox/is-that-you-nan/npm/ --loglevel verbose"
+      - "npm install lodash --registry https://packages.buildkite.com/packages-sandbox/is-that-you-nan/npm/ --loglevel verbose"
       - "npm test"
