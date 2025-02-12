@@ -2,7 +2,7 @@ steps:
   - label: "Pull upstream packages"
     command:
       - "chmod +x pack-all-installed.sh"
-      - "npm install express --loglevel verbose"
+      - "npm install express array-flatten@1.1.1 --loglevel verbose"
       - "./pack-all-installed.sh"
     artifact_paths:
       - "tgz-packages/**/*"
