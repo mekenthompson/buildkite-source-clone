@@ -3,13 +3,13 @@ steps:
     command: "npm install express async lodash --loglevel verbose"
     artifact_paths:
       - "node_modules/**/*"
-
+  - wait: ~
   - label: "Push packages to Buildkite registry"
     plugins:
       - publish-to-packages#v2.2.0:
           artifacts: "node_modules/**/*"
           registry: "packages-sandbox/monty-python-and-the-holy-grail"
-  - wait
+  - wait: ~
 
   - label: "Run tests"
     command: "npm test"
