@@ -8,7 +8,7 @@ steps:
     plugins:
       - publish-to-packages#v2.2.0:
           artifacts: "*.tgz"
-          registry: "packages-sandbox/monty-python-and-the-holy-grail"
+          registry: "packages-sandbox/is-that-you-nan"
   - wait: ~
 
   - label: "Run tests"
