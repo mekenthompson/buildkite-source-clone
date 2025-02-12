@@ -11,5 +11,6 @@ steps:
           registry: "packages-sandbox/is-that-you-nan"
 
   - label: "Run tests"
-    command: "npm install express async lodash --registry https://packages.buildkite.com/packages-sandbox/is-that-you-nan/npm/ --loglevel verbose"
-    command: "npm test"
+    command: 
+      - "npm install express async lodash --registry https://packages.buildkite.com/packages-sandbox/is-that-you-nan/npm/ --loglevel verbose"
+      - "npm test"
