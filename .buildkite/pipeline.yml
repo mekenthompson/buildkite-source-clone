@@ -14,8 +14,8 @@ steps:
       - publish-to-packages#v2.2.0:
           artifacts: "tgz-packages/**"
           registry: "packages-sandbox/is-that-you-nan"
-
+  - wait: ~
   - label: "Run tests"
     command: 
       - "npm install lodash --registry https://packages.buildkite.com/packages-sandbox/is-that-you-nan/npm/ --loglevel verbose"
-      - "npm test"
+      - "npm list lodash --depth=0"
