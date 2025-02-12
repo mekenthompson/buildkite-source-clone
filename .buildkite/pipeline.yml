@@ -1,0 +1,13 @@
+steps:
+  - label: "Pull upstream packages"
+    command: "npm install express async lodash --loglevel verbose"
+
+  - label: "Push packages to Buildkite registry"
+    plugins:
+      - publish-to-packages#v2.2.0:
+          artifacts: "node_modules/**/*"
+          registry: "packages-sandbox/monty-python-and-the-holy-grail"
+  - wait
+
+  - label: "Run tests"
+    command: "npm test"
