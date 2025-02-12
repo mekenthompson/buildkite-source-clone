@@ -2,12 +2,12 @@ steps:
   - label: "Pull upstream packages"
     command: "npm pack express async lodash --loglevel verbose"
     artifact_paths:
-      - "node_modules/**/*"
+      - "*.tgz"
   - wait: ~
   - label: "Push packages to Buildkite registry"
     plugins:
       - publish-to-packages#v2.2.0:
-          artifacts: "node_modules/**/*"
+          artifacts: "*.tgz"
           registry: "packages-sandbox/monty-python-and-the-holy-grail"
   - wait: ~
 
