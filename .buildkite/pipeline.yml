@@ -1,13 +1,17 @@
 steps:
   - label: "Pull upstream packages"
-    command: "npm pack express async lodash --loglevel verbose"
+    command:
+      - "chmod +x download-packages.sh"
+      - "chmod +x pack-all-installed.sh"
+      - "./download-packages.sh"
+      - "./pack-all-installed.sh"
     artifact_paths:
-      - "*.tgz"
+      - "tgz-packages/**/*"
   - wait: ~
   - label: "Push packages to Buildkite registry"
     plugins:
       - publish-to-packages#v2.2.0:
-          artifacts: "*.tgz"
+          artifacts: "tgz-packages/**/*"
           registry: "packages-sandbox/is-that-you-nan"
 
   - label: "Run tests"
