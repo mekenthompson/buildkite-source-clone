@@ -2,7 +2,7 @@ steps:
   - label: "Pull upstream packages"
     commands:
       - "chmod +x pack-all-installed.sh"
-      - "npm install lodash --loglevel verbose"
+      - "npm install lodash"
       - "./pack-all-installed.sh"
     artifact_paths:
       - "tgz-packages/**/*"
@@ -18,4 +18,5 @@ steps:
   - label: "Run tests"
     commands: 
       - "npm install lodash --registry https://packages.buildkite.com/packages-sandbox/is-that-you-nan/npm/ --loglevel verbose"
+      - "wait 5"
       - "npm list lodash --depth=0"
