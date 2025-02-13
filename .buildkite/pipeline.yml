@@ -2,7 +2,7 @@ steps:
   - label: "Pull upstream packages"
     commands:
       - "chmod +x pack-all-installed.sh"
-      - "npm install lodash"
+      - "xargs npm install < package-list.txt"
       - "./pack-all-installed.sh"
     artifact_paths:
       - "tgz-packages/**/*"
