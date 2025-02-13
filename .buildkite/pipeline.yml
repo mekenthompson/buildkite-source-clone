@@ -2,7 +2,8 @@ steps:
   - label: "Pull upstream packages"
     commands:
       - "chmod +x pack-all-installed.sh"
-      - "xargs npm install < package-list.txt"
+      - "chmod +x download-packages.sh"
+      - "./download-packages.sh"
       - "./pack-all-installed.sh"
     artifact_paths:
       - "tgz-packages/**/*"
